@@ -21,7 +21,9 @@ def generate_qr_code(data, file_name):
             basewidth = 70
             wpercent = (basewidth / float(logo.size[0]))
             hsize = int((float(logo.size[1]) * float(wpercent)))
-            logo = logo.resize((basewidth, hsize), Image.ANTIALIAS)
+            
+            # Use Image.LANCZOS instead of Image.ANTIALIAS
+            logo = logo.resize((basewidth, hsize), Image.LANCZOS)
             
             img = img.convert("RGBA")
             logo = logo.convert("RGBA")
@@ -29,11 +31,12 @@ def generate_qr_code(data, file_name):
             pos = ((img.size[0] - logo.size[0]) // 2, (img.size[1] - logo.size[1]) // 2)
             
             img.paste(logo, pos, logo)
-            
+                    
         except FileNotFoundError:
             print("Logo file not found")
-        except  Exception as e:
+        except Exception as e:
             print("Error with logo processing: ", e)
+
             
         img.save(file_name + ".png")
         
