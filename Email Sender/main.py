@@ -16,7 +16,9 @@ def login():
     email = os.getenv("EMAIL")
     password = os.getenv("PASSWORD")
 
-    # Initialize the SMTP connection and log in
+# Initialize the SMTP connection and log in
+# This block of code is a function named `login()` that handles the process of logging into an email
+# server using SMTP (Simple Mail Transfer Protocol). Here's a breakdown of what it does:
     try:
         ob = s.SMTP("smtp.gmail.com", 587)
         ob.ehlo()  # Start the connection
