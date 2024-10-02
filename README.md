@@ -22,3 +22,7 @@ In this bot I do some functionalities using instabot lib.
 - Follow / Unfollow
 - Upload Pic/Video with caption and without caption
 - Like and Unlike POST
+
+# Email Sender
+
+This program use to send email to multiple participant.
